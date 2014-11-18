@@ -1,3 +1,3 @@
 def nano():
-  pass
+  print "Nano at work :)"
 
