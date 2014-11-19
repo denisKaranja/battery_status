@@ -1,0 +1,7 @@
+tempfile.txt
+*.zip
+*.gz
+log/*.log
+log/P.log.[0-9]
+assets/videos
+!asset/videos/deebeat_*.mp4
