@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 #Fibonacci sequence
+=======
+#Program < fibonacci sequance
+#Author < Denis Karanja
+#Date < 18-11-2014
+>>>>>>> shorten_title
 def fibonacci(number):
 	total = 0
 
