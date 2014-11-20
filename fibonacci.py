@@ -1,4 +1,6 @@
-#fibonnacci program 
+#Program < fibonacci sequance
+#Author < Denis Karanja
+#Date < 18-11-2014
 def fibonacci(number):
 	total = 0
 
