@@ -1,3 +1,4 @@
+#Fibonacci sequence
 def fibonacci(number):
 	total = 0
 
