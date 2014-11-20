@@ -2,7 +2,7 @@
 
 import commands
 import pynotify
-#from threading import Timer
+from threading import Timer
 
 
 def battery_state():
@@ -35,8 +35,8 @@ def battery_state():
 		pass
 
 
-	#refreshRate = Timer(3.0, battery_state)
-	#refreshRate.start()
+	refreshRate = Timer(3.0, battery_state)
+	refreshRate.start()
 if __name__ == "__main__": battery_state()
 
 
