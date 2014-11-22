@@ -14,12 +14,15 @@ def battery_state():
 		rem = float(commands.getoutput("grep \"^remaining capacity\" /proc/acpi/battery/BAT1/state | awk '{ print $3 }'"))
 		full = float(commands.getoutput("grep \"^last full capacity\" /proc/acpi/battery/BAT1/info | awk '{ print $4 }'"))
 		state = commands.getoutput("grep \"^charging state\" /proc/acpi/battery/BAT1/state | awk '{ print $3 }'")
+		rate = float(commands.getoutput("grep \"^present rate\" /proc/acpi/battery/BAT1/state | awk '{ print $3 }'"))
 
+		time_left = rem / rate
+		time_left = round(time_left, 2)
 		percentage = int((rem/full) * 100)
 
 		if state == "discharging":
 			pynotify.init("Battery Alert!")
-			notify = pynotify.Notification("Battery state: -> "+state,str(percentage)+"%","/usr/share/icons/gnome/32x32/status/battery-low.png")
+			notify = pynotify.Notification("Battery state: -> "+state,str(percentage)+"% "+ str(time_left)+" hours rem","/usr/share/icons/gnome/32x32/status/battery-low.png")
 			notify.show()
 		elif state == "charging":
 			pynotify.init("Battery charging!")
